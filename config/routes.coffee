@@ -2,8 +2,9 @@ async = require('async')
 
 module.exports = (server, config, passport, auth) ->
   users = require('../app/controllers/users')
+  # server.get "/signup", users.signup
+
   server.get "/login", users.login
-  server.get "/signup", users.signup
   server.get "/logout", users.logout
   server.post "/users", users.create
   server.post "/users/update/:userId", users.update

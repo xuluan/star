@@ -55,9 +55,7 @@ module.exports = (grunt) ->
           legacyWatch: true
           cwd: __dirname
           env:
-            NODE_ENV : 'test'
-            
-            
+            NODE_ENV : 'test'            
 
     karma:
       unit:

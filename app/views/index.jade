@@ -24,18 +24,17 @@ html(ng-app='myApp', lang='en')
     .row
       .twelve.columns
         ul.nav-bar
-          li.divider
-          li.eight.columns
+          li.nine.columns
+            a(href='/') 星--管理系统
           if (req.isAuthenticated())
             li
-              a(href="/users/"+req.user.id, title="Account") Account
+              a(href="/users/"+req.user.id, title="Account") 我的账户
             li
-              a(href="/logout", title="logout") Logout
-          else
+              a(href="/logout", title="logout") 退出
+          else    
             li
-              a(href="/login", title="Login") Login          
-          li
-            a(ng-href='/#/articles/new') New Article
+              a(href="/login", title="Login") 登入   
+
       .twelve.columns
         h1
           | Nodejs Seed

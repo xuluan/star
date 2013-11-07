@@ -20,6 +20,12 @@ UserSchema = new Schema(
     type: String
     default: ""
 
+  role:
+    type: String
+    default: "customer"
+    enum: ["admin", "leader", "assistant", "customer", "ban"]
+
+
   provider:
     type: String
     default: ""
@@ -184,9 +190,19 @@ UserSchema.methods =
     return null
 
       
+User = mongoose.model "User", UserSchema
 
+###
+user = new User
+  username: 'admin'
+  password: 'admin'
+  password2: 'admin'
+  email: 'rolle.xu@gmail.com'
+  role: 'admin'
+user.save (err) ->
+  if err
+    console.log err
+  else
+    console.log 'Created user: ' + user.username
 
-
-
-
-mongoose.model "User", UserSchema
+###
