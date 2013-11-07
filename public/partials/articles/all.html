@@ -1,0 +1,21 @@
+
+
+<table>
+  <thead>
+    <tr>
+      <th width="200">Title</th>
+      <th width="300">Content</th>
+      <th width="250">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr ng-repeat="article in articles">
+      <td>{{article.title}}</td>
+      <td>{{article.content}}</td>
+      <td>
+        <span><a href="/#/articles/{{$index}}/edit" class="tiny button">Edit</a></span>
+        <span><button class="tiny button secondary" ng-click="remove($index)">Remove</button></span>
+    </tr>
+  </tbody>
+</table>

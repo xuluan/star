@@ -1,0 +1,27 @@
+extends auth
+
+block auth
+  form.login(action="/users/session", method="post")
+    .row
+      .eight.columns
+        .row
+          input(type='hidden', name='_csrf', value="#{csrf_token}")
+        .row
+          .four.columns
+            label.inline(for='email') Email
+          .eight.columns
+            input#email(type='email', name="email", placeholder='Email')
+        .row
+          .four.columns
+            label.inline(for='password') Password
+          .eight.columns
+            input#password(type='password', name="password", placeholder='Password')
+        .row
+          .ten.columns           
+            .form-actions
+              button.btn.btn-primary(type='submit') Login
+              &nbsp;
+              | or&nbsp;
+              a.show-signup(href="/signup") sign up
+  
+

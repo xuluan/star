@@ -1,0 +1,40 @@
+
+===TODO:
+1 auth
+ 
+
+
+a signup validation
+- username match format
+
+- email match format
+- username 4 - 20
+- passowrd 4-20
+- password == password2
+- emai unique
+
+b password update/ users show
+
+c home auth
+d google auth
+e passport token
+
+2 login and add bookmark
+3 test
+4 forgot password
+5 deploy and production mode
+6 paging
+7 freemark
+
+===DONE
+- jade to ejs
+- styl to twitter bootstrap
+- add grunt
+- create framework and environment:development, test, production
+- add mongoose
+- rest api
+- location
+- signup/ login/ logout
+- how to setup karma
+- how to create distribut
+- error message

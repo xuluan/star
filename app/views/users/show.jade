@@ -1,0 +1,30 @@
+extends ../layouts/default
+
+block main
+  - var name = "Username: " + user.username
+  h3= name
+  form.login(action="/users/update/#{user.id}", method="post")
+    .row
+      .eight.columns
+        .row
+          input(type='hidden', name='_csrf', value="#{csrf_token}")    
+        .row
+          .four.columns
+            label.inline(for='password') Old Password
+          .eight.columns
+            input#password(type='password', name="password", placeholder='Password')
+        .row
+          .four.columns
+            label.inline(for='new_password') New Password
+          .eight.columns
+            input#password(type='password', name="new_password", placeholder='Password')            
+        .row
+          .four.columns
+            label.inline(for='new_password2') Confirm Password
+          .eight.columns
+            input#password(type='password', name="new_password2", placeholder='Password')            
+        .row
+          .ten.columns           
+            .form-actions
+              button.btn.btn-primary(type='submit') Save
+

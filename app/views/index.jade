@@ -1,0 +1,99 @@
+!!! 5
+html(ng-app='myApp', lang='en')
+  head
+    //Lets set up our page a bit.
+    //==========================================================================
+    title Angular Coffee Express
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='A simple template with Angular JS running through Express with Connect-Assets and a focus on Coffee Script for scripting, stylus for templating, and Stylus for stylesheets.')
+    meta(name='author', content='Andrew Hobden')
+    //HTML5 shim, because IE's are horrible.
+    //if lt IE 9
+      script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+      != js("lib/angular-ui-0.2.0/angular-ui-ieshiv.min")
+      
+    //Include our Stylesheets. See /assets/css.
+
+    != css("lib/angular-ui-0.2.0/angular-ui.min")
+    != css("foundation.min")
+  //The content of our page.
+  //==========================================================================
+  body
+    //Top Bar 
+    .row
+      .twelve.columns
+        ul.nav-bar
+          li.divider
+          li.eight.columns
+          if (req.isAuthenticated())
+            li
+              a(href="/users/"+req.user.id, title="Account") Account
+            li
+              a(href="/logout", title="logout") Logout
+          else
+            li
+              a(href="/login", title="Login") Login          
+          li
+            a(ng-href='/#/articles/new') New Article
+      .twelve.columns
+        h1
+          | Nodejs Seed
+          small This is my project. It's awesome.
+          hr
+    //End Top Bar 
+    //Angular's views go in this div element.
+    //Main Page Content and Sidebar 
+    .row
+      //Main Blog Content 
+      .nine.columns(ng-view='ng-view', role='content')
+      //End Main Content 
+      //Sidebar 
+      aside.three.columns
+        h5 Categories
+        ul.side-nav
+          li
+            a(href='#') News
+          li
+            a(href='#') Code
+          li
+            a(href='#') Design
+          li
+            a(href='#') Fun
+          li
+            a(href='#') Weasels
+        .panel
+          h5 Featured
+          p
+            | Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.
+          a(href='#') Read More →
+    //Footer 
+    footer.row
+      .twelve.columns
+        hr
+        .row
+          .six.columns
+            p © Copyright no one at all.
+          .six.columns
+            ul.link-list.right
+              li
+                a(href='#') Link 1
+              li
+                a(href='#') Link 2
+              li
+                a(href='#') Link 3
+              li
+                a(href='#') Link 4
+    //End Footer 
+
+  //Load jQuery
+  != js("lib/jquery.min")
+  // Load Angular
+  != js("lib/angular-1.0.8/angular.min")
+  != js("lib/angular-1.0.8/angular-resource.min")
+  // Load Angular Configuration
+  != js("app") 
+  != js("directives")
+  != js("filters")
+  != js("services/articles_service")  
+  != js("controllers/articles_controller")

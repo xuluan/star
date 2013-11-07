@@ -6,10 +6,13 @@ lib-cov
 *.out
 *.pid
 *.gz
-
+*.swp
+.app.js.swo
+.DS_Store
 pids
 logs
 results
-
-npm-debug.log
+.idea
 node_modules
+config.js
+npm-debug.log

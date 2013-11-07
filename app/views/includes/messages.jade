@@ -1,0 +1,27 @@
+- if (typeof info != 'undefined' && info.length)
+  .alert-box
+    ul
+      - each inf in info
+        li!= inf
+
+- if (typeof errors != 'undefined' && errors.length)
+  .alert-box.alert
+    ul
+      - each error in errors
+        li!= error  
+
+- if (typeof success != 'undefined' && success.length)
+  .alert-box.success
+    ul
+      - each succ in success
+        li!= succ
+
+- if (typeof warning != 'undefined' && warning.length)
+  .alert-box.secondary
+    ul
+      - each warn in warning
+        li!= warn
+
+- if (typeof message != 'undefined' && message.length)
+  .alert-box.alert= message
+
