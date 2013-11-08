@@ -2,7 +2,9 @@ async = require('async')
 
 module.exports = (server, config, passport, auth) ->
   users = require('../app/controllers/users')
+
   # server.get "/signup", users.signup
+  server.all('*', users.loadUser)
 
   server.get "/login", users.login
   server.get "/logout", users.logout
@@ -14,7 +16,8 @@ module.exports = (server, config, passport, auth) ->
   ), users.session
   server.get "/users/:userId", users.show
   
-  server.param('userId', users.user)
+
+  # server.param('userId', users.user)
  
   server.get "/", (req, res) ->
     res.render "index"

@@ -1,7 +1,7 @@
 extends ../layouts/default
 
 block main
-  - var name = "Username: " + user.username
+  - var name = "用户账户: " + user.username
   h3= name
   form.login(action="/users/update/#{user.id}", method="post")
     .row

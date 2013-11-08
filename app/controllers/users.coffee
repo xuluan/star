@@ -59,7 +59,6 @@ Create user
 ###
 exports.create = (req, res) ->
   user = new User(req.body)
-  console.log "create user " + user
   user.provider = "local"
   user.save (err) ->
     if err
@@ -78,21 +77,16 @@ exports.create = (req, res) ->
 
 
 exports.update = (req, res) ->
-
-  user =  req.profile
+  user =  req.current_user
   rc = user.change_password(req.body.password, req.body.new_password, req.body.new_password2 )
   if rc
-    console.log rc
     return res.render "users/show",
       errors: [rc]
       title: user.name
       user: user
   else
-    console.log "user.save"
     user.save (err) ->
       if err
-        console.dir err
-
         return res.render "users/show",
           errors: utils.errors(err.errors)
           title: user.name
@@ -102,24 +96,27 @@ exports.update = (req, res) ->
 
 
 ###
-Show profile
+Show current user
 ###
 exports.show = (req, res) ->
-  user = req.profile
-
+  user = req.current_user
   res.render "users/show",
     title: user.name
     user: user
 
 
+exports.loadUser = (req, res, next) ->
+  id =  req.session.passport.user || null
+  User.findOne(_id: id).exec (err, user) ->
+    req.current_user = user unless err
+    next()
 
 ###
 Find user by id
 ###
 exports.user = (req, res, next, id) ->
-  console.log "exports.user " + id
   User.findOne(_id: id).exec (err, user) ->
     return next(err)  if err
     return next(new Error("Failed to load User " + id))  unless user
-    req.profile = user
+    req.current_user = user
     next()
