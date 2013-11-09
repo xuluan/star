@@ -6,6 +6,9 @@ Shop = require("../models/shop")
 _ = require("underscore")
 
 
+exports.loadShop = (req, res) ->
+  res.render "shop"
+
 
 ###
 List of Shops

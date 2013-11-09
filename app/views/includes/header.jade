@@ -6,7 +6,7 @@
         a(href='/') 星--管理系统
       if (req.isAuthenticated())
         li
-          a(href="/users/"+req.user.id, title="Account") 店铺管理                        
+          a(href="/shop", title="Shop") 店铺管理                        
         li
           a(href="/users/"+req.user.id, title="Account") 客户管理
         li
