@@ -2,16 +2,28 @@
 .row
   .twelve.columns
     ul.nav-bar
-      li.nine.columns
+      li
         a(href='/') 星--管理系统
       if (req.isAuthenticated())
+        li
+          a(href="/users/"+req.user.id, title="Account") 店铺管理                        
+        li
+          a(href="/users/"+req.user.id, title="Account") 客户管理
+        li
+          a(href="/users/"+req.user.id, title="Account") 玩具模型管理
+        li
+          a(href="/users/"+req.user.id, title="Account") 玩具管理
+        li
+          a(href="/users/"+req.user.id, title="Account") 用户管理          
+        li
+          a(href="/users/"+req.user.id, title="Account") 统计          
         li
           a(href="/users/"+req.user.id, title="Account") 我的账户
         li
           a(href="/logout", title="logout") 退出
-      else   
+      else    
         li
-          a(href="/login", title="Login") 登入              
+          a(href="/login", title="Login") 登入           
 
    
 //End Top Bar

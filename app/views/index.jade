@@ -21,25 +21,7 @@ html(ng-app='myApp', lang='en')
   //==========================================================================
   body
     //Top Bar 
-    .row
-      .twelve.columns
-        ul.nav-bar
-          li.nine.columns
-            a(href='/') 星--管理系统
-          if (req.isAuthenticated())
-            li
-              a(href="/users/"+req.user.id, title="Account") 我的账户
-            li
-              a(href="/logout", title="logout") 退出
-          else    
-            li
-              a(href="/login", title="Login") 登入   
-
-      .twelve.columns
-        h1
-          | Nodejs Seed
-          small This is my project. It's awesome.
-          hr
+    include includes/header
     //End Top Bar 
     //Angular's views go in this div element.
     //Main Page Content and Sidebar 
