@@ -21,7 +21,8 @@ exports.list = (req, res) ->
       res.json toytypes
 
 exports.create = (req, res) ->
-  toytype = new toytype req.body
+  console.log "aaa"
+  toytype = new Toytype req.body
   toytype.save()
   res.jsonp toytype
 
@@ -32,12 +33,6 @@ exports.update = (req, res) ->
     if err
       console.err err
     else
-      console.log "update "
-      console.dir toytype
-
-      console.dir req.body
-      console.log "update " + _.extend(toytype, req.body)
-
       toytype = _.extend(toytype, req.body)
 
       toytype.save (err) ->

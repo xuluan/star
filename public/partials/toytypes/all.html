@@ -3,9 +3,9 @@
 <table>
   <thead>
     <tr>
-      <th width="150">店名</th>
-      <th width="300">地址</th>
-      <th width="100">状态</th>
+      <th width="150">编号</th>
+      <th width="200">中文名</th>
+      <th width="200">价格</th>
 
       <th width="250">操作</th>
     </tr>
@@ -13,9 +13,9 @@
   <tbody>
     
     <tr ng-repeat="toytype in toytypes">
-      <td>{{toytype.title}}</td>
-      <td>{{toytype.addr}}</td>
-      <td>{{toytype.status}}</td>
+      <td>{{toytype.sno}}</td>
+      <td>{{toytype.cname}}</td>
+      <td>{{toytype.price}}</td>
       <td>
         <span><a href="/toytype#/toytypes/{{$index}}/edit" class="tiny button">Edit</a></span>
         <span><button class="tiny button secondary" ng-click="remove($index)">Remove</button></span>

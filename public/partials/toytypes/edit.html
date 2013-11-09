@@ -1,26 +1,180 @@
 
 
 <form class="form-horizontal" data-ng-init="findOne()" ng-submit="save()">
-		<label class="control-label" for="title">店名</label>
-			<input type="text" data-ng-model="toytype.title" id="title" placeholder="店名">
+<fieldset>
 
-		<label class="control-label" for="addr">地址</label>
-			<input type="text" data-ng-model="toytype.addr" id="addr" placeholder="地址">
 
-		<label class="control-label" for="status">状态</label>
+  <div class="row">
+    <div class="three columns">
 
-		    <select data-ng-model="toytype.status" 
-		      data-ng-init="toytype.status = Toytype.status || status_set[0].name"
-		      data-ng-options="c.value as c.name for c in status_set">
+		<label class="control-label left inline" for="sno">编号</label>
+    </div>
+    <div class="nine columns">
+			<input type="text" data-ng-model="toytype.sno" id="sno" placeholder="编号">
+    </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">
+
+		<label class="control-label left inline" for="cname">中文名</label>
+    </div>
+    <div class="nine columns">
+
+			<input type="text" data-ng-model="toytype.cname" id="cname" placeholder="中文名">
+    </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">
+
+		<label class="control-label" for="age">年龄</label>
+    </div>
+    <div class="nine columns">
+
+			<input type="text" data-ng-model="toytype.age" id="age" placeholder="年龄">
+    </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">
+
+
+		<label class="control-label" for="price">价格</label>
+    </div>
+    <div class="nine columns">
+
+			<input type="text" data-ng-model="toytype.price" id="price" placeholder="价格">
+    </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">
+
+		<label class="control-label" for="office_price">官方报价</label>
+    </div>
+    <div class="nine columns">
+
+			<input type="text" data-ng-model="toytype.office_price" id="office_price" placeholder="官方报价">
+    </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">
+
+		<label class="control-label" for="buying_price">进货价格</label>
+    </div>
+    <div class="nine columns">
+
+			<input type="text" data-ng-model="toytype.buying_price" id="buying_price" placeholder="进货价格">
+    </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">
+
+		<label class="control-label" for="release_year">发布年份</label>
+    </div>
+    <div class="nine columns">
+
+			<input type="text" data-ng-model="toytype.release_year" id="release_year" placeholder="发布年份">			
+
+
+    </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">
+
+		<label class="control-label" for="pieces">片数</label>
+    </div>
+    <div class="nine columns">
+			<input type="text" data-ng-model="toytype.pieces" id="pieces" placeholder="片数">
+    </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">
+
+		<label class="control-label" for="doll_num">人仔数量</label>
+    </div>
+    <div class="nine columns">
+
+			<input type="text" data-ng-model="toytype.doll_num" id="doll_num" placeholder="人仔数量">
+    </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">
+		<label class="control-label" for="volume">体积</label>
+    </div>
+    <div class="nine columns">
+
+			<input type="text" data-ng-model="toytype.volume" id="volume" placeholder="体积">
+    </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">
+
+		<label class="control-label" for="weight">重量</label>
+    </div>
+    <div class="nine columns">
+    		
+			<input type="text" data-ng-model="toytype.weight" id="weight" placeholder="重量">		
+    </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">
+
+
+
+		<label class="control-label" for="mode">颗粒类型</label>
+    </div>
+    <div class="nine columns">
+		    <select data-ng-model="toytype.mode" 
+		      data-ng-init="toytype.mode = toytype.mode || mode_set[0].name"
+		      data-ng-options="c.value as c.name for c in mode_set">
 		    </select>
 
-		<label class="control-label" for="tel">电话</label>
-			<input type="text" data-ng-model="toytype.tel" id="tel" placeholder="电话">
+    </div>
+  </div>
+			<br/>
+			<br/>
+
+
 
 
 		<label class="control-label" for="desc">备注</label>
 			<textarea data-ng-model="toytype.desc" id="desc" cols="30" rows="10" placeholder="备注"></textarea>
 
 			<input type="submit" class="btn">
+
+	
+</fieldset>
+		
 </form>
 

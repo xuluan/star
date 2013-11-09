@@ -42,7 +42,7 @@ module.exports = (server, config, passport, auth) ->
   server.get('/toytype', toytypes.loadToytype)
 
   server.get('/toytypes', toytypes.list)
-  server.post('/stoytypes', toytypes.create)
+  server.post('/toytypes', toytypes.create)
   server.get('/toytypes/:toytypeId', toytypes.show)
   server.put('/toytypes/:toytypeId', toytypes.update)
   server.del('/toytypes/:toytypeId', toytypes.destroy)

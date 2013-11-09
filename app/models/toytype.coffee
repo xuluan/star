@@ -14,25 +14,65 @@ ToytypeSchema = new Schema
     type: Date
     default: Date.now
 
-  title:
+  sno:
     type: String
     default: ""
     trim: true
+    unique: true
 
-  addr:
+
+  cname:
     type: String
     default: ""
     trim: true
   
-  tel:
+  ename:
     type: String
     default: ""
     trim:true
     
-  status:
+  age:
     type: String
-    default: "正常"
-    enum: ["正常", "暂停", "关闭"]
+    default: ""
+    trim: true
+  
+  price:
+    type: Number
+    default: "0"
+
+  office_price:
+    type: Number
+    default: "0"
+
+  buying_price:
+    type: Number
+    default: "0"       
+
+  release_year:
+    type: Number
+    default: "0" 
+
+  pieces:
+    type: Number
+    default: "0"
+
+  doll_num:
+    type: Number
+    default: "0"
+
+  volume:
+    type: Number
+    default: "0"       
+
+  weight:
+    type: Number
+    default: "0"     
+
+
+  mode:
+    type: String
+    default: "小颗粒"
+    enum: ["小颗粒", "大颗粒", "未知"]
 
   desc:
     type: String
@@ -40,6 +80,7 @@ ToytypeSchema = new Schema
     trim:true
 
 
+ToytypeSchema.path("sno").index {unique:true}
 
 
 module.exports = mongoose.model "Toytype", ToytypeSchema

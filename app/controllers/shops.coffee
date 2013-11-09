@@ -32,9 +32,6 @@ exports.update = (req, res) ->
     if err
       console.err err
     else
-      console.log "update "
-      console.dir shop
-
       console.dir req.body
       console.log "update " + _.extend(shop, req.body)
 
