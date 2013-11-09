@@ -1,0 +1,24 @@
+
+
+<table>
+  <thead>
+    <tr>
+      <th width="150">店名</th>
+      <th width="300">地址</th>
+      <th width="100">状态</th>
+
+      <th width="250">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr ng-repeat="shop in shops">
+      <td>{{shop.title}}</td>
+      <td>{{shop.addr}}</td>
+      <td>{{shop.status}}</td>
+      <td>
+        <span><a href="/#/shops/{{$index}}/edit" class="tiny button">Edit</a></span>
+        <span><button class="tiny button secondary" ng-click="remove($index)">Remove</button></span>
+    </tr>
+  </tbody>
+</table>

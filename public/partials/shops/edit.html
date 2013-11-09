@@ -1,0 +1,26 @@
+
+
+<form class="form-horizontal" data-ng-init="findOne()" ng-submit="save()">
+		<label class="control-label" for="title">店名</label>
+			<input type="text" data-ng-model="shop.title" id="title" placeholder="店名">
+
+		<label class="control-label" for="addr">地址</label>
+			<input type="text" data-ng-model="shop.addr" id="addr" placeholder="地址">
+
+		<label class="control-label" for="status">状态</label>
+
+		    <select data-ng-model="shop.status" 
+		      data-ng-init="shop.status = shop.status || status_set[0].name"
+		      data-ng-options="c.value as c.name for c in status_set">
+		    </select>
+
+		<label class="control-label" for="tel">电话</label>
+			<input type="text" data-ng-model="shop.tel" id="tel" placeholder="电话">
+
+
+		<label class="control-label" for="desc">备注</label>
+			<textarea data-ng-model="shop.desc" id="desc" cols="30" rows="10" placeholder="备注"></textarea>
+
+			<input type="submit" class="btn">
+</form>
+

@@ -20,7 +20,7 @@ module.exports = (server, config, passport, auth) ->
   # server.param('userId', users.user)
  
   server.get "/", (req, res) ->
-    res.render "index"
+    res.render "shop"
     
   articles = require('../app/controllers/articles')
   server.get('/articles', articles.list)
@@ -28,3 +28,10 @@ module.exports = (server, config, passport, auth) ->
   server.get('/articles/:articleId', articles.show)
   server.put('/articles/:articleId', articles.update)
   server.del('/articles/:articleId', articles.destroy)
+
+  shops = require('../app/controllers/shops')
+  server.get('/shops', shops.list)
+  server.post('/shops', shops.create)
+  server.get('/shops/:shopId', shops.show)
+  server.put('/shops/:shopId', shops.update)
+  server.del('/shops/:shopId', shops.destroy)

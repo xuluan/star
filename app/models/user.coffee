@@ -85,6 +85,8 @@ UserSchema.path("email").validate ((email) ->
   mailPattern = /.+\@.+\..+/
   email.match mailPattern
 ), "Email isn't a valid email"
+
+
 UserSchema.path("email").validate ((email, fn) ->
   User = mongoose.model("User")
   
