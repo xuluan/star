@@ -37,3 +37,13 @@ module.exports = (server, config, passport, auth) ->
   server.get('/shops/:shopId', shops.show)
   server.put('/shops/:shopId', shops.update)
   server.del('/shops/:shopId', shops.destroy)
+
+  toytypes = require('../app/controllers/toytypes')
+  server.get('/toytype', toytypes.loadToytype)
+
+  server.get('/toytypes', toytypes.list)
+  server.post('/stoytypes', toytypes.create)
+  server.get('/toytypes/:toytypeId', toytypes.show)
+  server.put('/toytypes/:toytypeId', toytypes.update)
+  server.del('/toytypes/:toytypeId', toytypes.destroy)
+

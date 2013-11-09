@@ -4,7 +4,7 @@
   $scope.status_set = [
     {name:'正常', value:'正常'},
     {name:'暂停', value:'暂停'},
-  ];
+  ]
 
   $scope.create = ->
     shop= new Shops

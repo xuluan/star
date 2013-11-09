@@ -7,9 +7,9 @@ config = require("../../config/config")[env]
 Schema = mongoose.Schema
 
 ###
-Shop Schema
+Toytype Schema
 ###
-ShopSchema = new Schema
+ToytypeSchema = new Schema
   created:
     type: Date
     default: Date.now
@@ -39,14 +39,7 @@ ShopSchema = new Schema
     default: ""
     trim:true
 
-  # leader:
-  #   type: Schema.ObjectId
-  #   ref: "User"
 
-###
-Statics
-###
-# ArticleSchema.statics = load: (id, cb) ->
-#   @findOne(_id: id).populate("user").exec cb
 
-module.exports = mongoose.model "Shop", ShopSchema
+
+module.exports = mongoose.model "Toytype", ToytypeSchema
