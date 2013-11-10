@@ -6,6 +6,7 @@
     {name:'大颗粒', value:'大颗粒'},
   ]
 
+
   $scope.create = ->
     toytype= new Toytypes
       sno: @toytype.sno

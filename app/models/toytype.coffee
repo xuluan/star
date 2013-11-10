@@ -79,6 +79,17 @@ ToytypeSchema = new Schema
     default: ""
     trim:true
 
+  image_main:
+    type: String
+    default: ""
+
+  image_1:
+    type: String
+    default: ""
+
+  image_2:
+    type: String
+    default: ""    
 
 ToytypeSchema.path("sno").index {unique:true}
 

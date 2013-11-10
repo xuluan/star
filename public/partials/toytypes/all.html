@@ -18,7 +18,9 @@
       <td>{{toytype.price}}</td>
       <td>
         <span><a href="/toytype#/toytypes/{{$index}}/edit" class="tiny button">Edit</a></span>
-        <span><button class="tiny button secondary" ng-click="remove($index)">Remove</button></span>
+        <span><a href="/toytype#/toytypes/{{$index}}" class="tiny button">Show</a></span>
+
+        <!-- <span><button class="tiny button secondary" ng-click="remove($index)">Remove</button></span> -->
     </tr>
   </tbody>
 </table>

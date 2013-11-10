@@ -40,6 +40,7 @@ module.exports = (server, config, passport, auth) ->
 
   toytypes = require('../app/controllers/toytypes')
   server.get('/toytype', toytypes.loadToytype)
+  server.post('/toytype_upload/:toytypeId', toytypes.toytype_upload)
 
   server.get('/toytypes', toytypes.list)
   server.post('/toytypes', toytypes.create)

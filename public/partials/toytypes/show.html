@@ -1,0 +1,150 @@
+
+
+<fieldset data-ng-init="findOne()" >
+
+
+  <div class="row">
+    <div class="three columns">编号</div>
+    <div class="nine columns">{{toytype.sno}}</div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">中文名</div>
+    <div class="nine columns">{{toytype.cname}}</div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">年龄</div>
+    <div class="nine columns">{{toytype.age}}</div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">价格</div>
+    <div class="nine columns">{{toytype.price}}</div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns">官方报价</div>
+    <div class="nine columns"> {{toytype.office_price}} </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns"> 进货价格 </div>
+    <div class="nine columns"> {{toytype.buying_price}} </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns"> 发布年份 </div>
+    <div class="nine columns"> {{toytype.release_year}} </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns"> 片数 </div>
+    <div class="nine columns"> {{toytype.pieces}} </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns"> 人仔数量 </div>
+    <div class="nine columns"> {{toytype.doll_num}} </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns"> 体积 </div>
+    <div class="nine columns"> {{toytype.volume}} </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns"> 重量 </div>
+    <div class="nine columns"> {{toytype.weight}} </div>
+  </div>
+
+			<br/>
+
+  <div class="row">
+    <div class="three columns"> 颗粒类型 </div>
+    <div class="nine columns"> {{toytype.mode}} </div>
+  </div>
+			<br/>
+			<br/>
+
+
+
+
+		<label class="control-label" for="desc">备注</label>
+    <fieldset>{{toytype.desc}}</fieldset>
+
+    <form action="/toytype_upload/{{toytype._id}}" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="idx" value="main">
+
+  <div class="row">
+    <div class="three columns">
+      <label class="control-label" for="name">主图</label>
+    </div>
+    <div class="three columns"> <input type="file" name="file"> </div>
+    <div class="three columns"> <input type="submit" value="上传"> </div>
+
+  </div>
+  <div class="row" ng-show='toytype.image_main'>
+    <img src="http://mystar.b0.upaiyun.com/{{toytype.image_main}}" />
+  </div>
+    </form>
+
+    <form action="/toytype_upload/{{toytype._id}}" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="idx" value="1">
+
+  <div class="row">
+    <div class="three columns">
+      <label class="control-label" for="name">附图1</label>
+    </div>
+    <div class="three columns"> <input type="file" name="file"> </div>
+    <div class="three columns"> <input type="submit" value="上传"> </div>
+
+  </div>
+
+  <div class="row" ng-show='toytype.image_1'>
+    <img src="http://mystar.b0.upaiyun.com/{{toytype.image_1}}" />
+  </div>
+    </form>
+
+    <form action="/toytype_upload/{{toytype._id}}" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="idx" value="2">
+
+  <div class="row">
+    <div class="three columns">
+      <label class="control-label" for="name">附图2</label>
+    </div>
+    <div class="three columns"> <input type="file" name="file"> </div>
+    <div class="three columns"> <input type="submit" value="上传"> </div>
+
+  </div>
+  <div class="row" ng-show='toytype.image_2'>
+    <img src="http://mystar.b0.upaiyun.com/{{toytype.image_2}}" />
+  </div>
+    </form>        
+	
+</fieldset>
+
+
+		
+
+
