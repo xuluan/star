@@ -16,6 +16,12 @@
   </div>
 
 			<br/>
+  <div class="row">
+    <div class="three columns">英文名</div>
+    <div class="nine columns">{{toytype.ename}}</div>
+  </div>
+
+      <br/>      
 
   <div class="row">
     <div class="three columns">年龄</div>
@@ -93,52 +99,117 @@
 		<label class="control-label" for="desc">备注</label>
     <fieldset>{{toytype.desc}}</fieldset>
 
-    <form action="/toytype_upload/{{toytype._id}}" method="post" enctype="multipart/form-data">
-      <input type="hidden" name="idx" value="main">
+<script>
+
+    var change_file = function() 
+    {
+        $("#progress").show();
+        //clear everything
+        $("#bar").width('0%');
+        $("#message").html("");
+        $("#percent").html("0%");
+    };
+
+$(document).ready(function()
+{
+ 
+    var options = { 
+    beforeSend: function() 
+    {
+        $("#progress").show();
+        //clear everything
+        $("#bar").width('0%');
+        $("#message").html("");
+        $("#percent").html("0%");
+    },
+    uploadProgress: function(event, position, total, percentComplete) 
+    {
+        $("#bar").width(percentComplete+'%');
+        $("#percent").html(percentComplete+'%');
+ 
+    },
+    success: function() 
+    {
+        $("#bar").width('100%');
+        $("#percent").html('100%');
+ 
+    },
+    complete: function(response) 
+    {
+        $("#message").html("<font color='green'>"+response.responseText+"</font>");
+    },
+    error: function()
+    {
+        $("#message").html("<font color='red'> ERROR: unable to upload files</font>");
+ 
+    }
+ 
+}; 
+ 
+     $(".myForm").ajaxForm(options);
+ 
+});
+ 
+</script>
+
+<h3>添加图片</h3>
+
+ <div id="progress">
+        <div id="bar"></div>
+        <div id="percent">0%</div >
+</div>
+<br/>
+<div id="message"></div>
+
+ 
+<form class="myForm" action="/toytype_upload/{{toytype._id}}" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="idx" value="main">
 
   <div class="row">
     <div class="three columns">
       <label class="control-label" for="name">主图</label>
     </div>
-    <div class="three columns"> <input type="file" name="file"> </div>
+    <div class="three columns"> <input type="file" name="file" onchange="change_file()"> </div>
     <div class="three columns"> <input type="submit" value="上传"> </div>
 
   </div>
   <div class="row" ng-show='toytype.image_main'>
-    <img src="http://mystar.b0.upaiyun.com/{{toytype.image_main}}" />
+    <img src="{{get_image_link(toytype.image_main)}}"/>
   </div>
-    </form>
+ </form>
+ 
 
-    <form action="/toytype_upload/{{toytype._id}}" method="post" enctype="multipart/form-data">
+
+
+    <form class="myForm"  action="/toytype_upload/{{toytype._id}}" method="post" enctype="multipart/form-data">
       <input type="hidden" name="idx" value="1">
 
   <div class="row">
     <div class="three columns">
       <label class="control-label" for="name">附图1</label>
     </div>
-    <div class="three columns"> <input type="file" name="file"> </div>
+    <div class="three columns"> <input type="file" name="file"  onchange="change_file()"> </div>
     <div class="three columns"> <input type="submit" value="上传"> </div>
 
   </div>
-
   <div class="row" ng-show='toytype.image_1'>
-    <img src="http://mystar.b0.upaiyun.com/{{toytype.image_1}}" />
+    <img src="{{get_image_link(toytype.image_1)}}"/>
   </div>
     </form>
 
-    <form action="/toytype_upload/{{toytype._id}}" method="post" enctype="multipart/form-data">
+    <form class="myForm"  action="/toytype_upload/{{toytype._id}}" method="post" enctype="multipart/form-data">
       <input type="hidden" name="idx" value="2">
 
   <div class="row">
     <div class="three columns">
       <label class="control-label" for="name">附图2</label>
     </div>
-    <div class="three columns"> <input type="file" name="file"> </div>
+    <div class="three columns"> <input type="file" name="file"  onchange="change_file()"> </div>
     <div class="three columns"> <input type="submit" value="上传"> </div>
 
   </div>
   <div class="row" ng-show='toytype.image_2'>
-    <img src="http://mystar.b0.upaiyun.com/{{toytype.image_2}}" />
+    <img src="{{get_image_link(toytype.image_2)}}"/>
   </div>
     </form>        
 	

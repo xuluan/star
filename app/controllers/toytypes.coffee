@@ -20,21 +20,14 @@ testCallback = (err, data) ->
     console.log err
 
 exports.toytype_upload = (req, res) ->
-  console.log req.files
-  console.log req.body["idx"]
-
   Toytype.findById(req.params.toytypeId).exec (err, toytype) ->
     if err
       console.err err
+      return res.send "fail"
     else
-      console.log "b "  + req.body["idx"]
       upyun = new UPYun("mystar", "test", "testtest")
       idx = req.body["idx"]
-      console.log typeof(idx)
-      console.log typeof(req.body["idx"])
-
       suffix = '_' + idx + '.png'
-      console.log idx.toString()
       image_name = toytype.sno + suffix
       path = "/toytypes/"+image_name
       console.log path
@@ -43,7 +36,9 @@ exports.toytype_upload = (req, res) ->
 
       toytype["image_" + idx] = path
       toytype.save (err) ->
-        res.jsonp(toytype)
+        return res.send "OK"
+
+
 
 ###
 List of Toytypes

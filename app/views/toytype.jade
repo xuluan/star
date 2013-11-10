@@ -17,6 +17,10 @@ html(ng-app='myApp', lang='en')
 
     != css("lib/angular-ui-0.2.0/angular-ui.min")
     != css("foundation.min")
+    //script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js')
+    //script(src='http://malsup.github.com/jquery.form.js')   
+    != js("lib/jquery.1.10.1.min") 
+    != js("lib/jquery.form") 
   //The content of our page.
   //==========================================================================
   body
@@ -64,7 +68,9 @@ html(ng-app='myApp', lang='en')
 
   //Load jQuery
   
-  != js("lib/jquery.min")
+//  != js("lib/jquery.min")
+
+
 
   // Load Angular
   != js("lib/angular-1.0.8/angular.min")

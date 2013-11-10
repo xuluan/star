@@ -6,6 +6,12 @@
     {name:'大颗粒', value:'大颗粒'},
   ]
 
+  $scope.get_image_link = (img) ->
+    if img
+      return "http://mystar.b0.upaiyun.com/"+img
+    else
+      ""
+
 
   $scope.create = ->
     toytype= new Toytypes
@@ -23,6 +29,9 @@
       weight: @toytype.weight
       mode: @toytype.mode
       desc: @toytype.desc
+      image_main: @toytype.image_main
+      image_1: @toytype.image_1
+      image_2: @toytype.image_2
 
     toytype.$save (response) ->
       console.log response

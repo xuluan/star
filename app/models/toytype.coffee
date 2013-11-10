@@ -46,11 +46,11 @@ ToytypeSchema = new Schema
 
   buying_price:
     type: Number
-    default: "0"       
+    default: "0"
 
   release_year:
     type: Number
-    default: "0" 
+    default: "0"
 
   pieces:
     type: Number
@@ -62,11 +62,11 @@ ToytypeSchema = new Schema
 
   volume:
     type: Number
-    default: "0"       
+    default: "0"
 
   weight:
     type: Number
-    default: "0"     
+    default: "0"
 
 
   mode:
@@ -81,15 +81,12 @@ ToytypeSchema = new Schema
 
   image_main:
     type: String
-    default: ""
 
   image_1:
     type: String
-    default: ""
 
   image_2:
     type: String
-    default: ""    
 
 ToytypeSchema.path("sno").index {unique:true}
 
